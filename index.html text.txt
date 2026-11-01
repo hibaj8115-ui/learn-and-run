@@ -1,0 +1,536 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learn N Run | Free Computer Education</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+:root {
+    --dark: #071426;
+    --blue: #087cf0;
+    --cyan: #00d4ff;
+    --white: #ffffff;
+}
+
+body {
+    background: #f5f8fc;
+    color: #17243a;
+}
+
+/* NAVBAR */
+header {
+    background: var(--dark);
+    padding: 18px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    color: white;
+    font-size: 27px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: var(--cyan);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 24px;
+    font-size: 15px;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: var(--cyan);
+}
+
+.menu-btn {
+    display: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* HERO */
+.hero {
+    min-height: 570px;
+    padding: 100px 8%;
+    background: linear-gradient(120deg, #071426, #064e91);
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero h1 {
+    font-size: clamp(40px, 6vw, 65px);
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: var(--cyan);
+}
+
+.hero p {
+    font-size: 19px;
+    line-height: 1.8;
+    color: #d5e8ff;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--cyan);
+    color: #071426;
+    padding: 14px 27px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.btn:hover {
+    background: white;
+    transform: translateY(-4px);
+}
+
+/* STATS */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 55px 8%;
+    background: white;
+}
+
+.stat-box {
+    text-align: center;
+    padding: 25px;
+}
+
+.stat-box h2 {
+    color: var(--blue);
+    font-size: 42px;
+}
+
+.stat-box p {
+    color: #58677b;
+    font-weight: 600;
+}
+
+/* GENERAL SECTIONS */
+section {
+    padding: 75px 8%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 15px;
+    color: var(--dark);
+}
+
+.section-desc {
+    text-align: center;
+    color: #65738a;
+    margin-bottom: 40px;
+    line-height: 1.7;
+}
+
+/* ABOUT */
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.about h2 {
+    font-size: 34px;
+    margin-bottom: 20px;
+}
+
+.about p {
+    line-height: 1.9;
+    color: #59677c;
+}
+
+.about-card {
+    background: linear-gradient(135deg, #087cf0, #00c9db);
+    color: white;
+    border-radius: 18px;
+    padding: 45px;
+    text-align: center;
+}
+
+.about-card h2 {
+    font-size: 35px;
+}
+
+/* COURSES */
+.course-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.course {
+    background: white;
+    padding: 30px;
+    border-radius: 13px;
+    box-shadow: 0 5px 25px #0000000b;
+    transition: .3s;
+}
+
+.course:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px #087cf033;
+}
+
+.course .icon {
+    font-size: 40px;
+    margin-bottom: 18px;
+}
+
+.course h3 {
+    margin-bottom: 12px;
+    color: var(--dark);
+}
+
+.course p {
+    color: #65738a;
+    line-height: 1.7;
+}
+
+/* FREE EDUCATION */
+.free-section {
+    background: var(--dark);
+    color: white;
+    text-align: center;
+}
+
+.free-section h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.free-section h2 span {
+    color: var(--cyan);
+}
+
+.free-section p {
+    color: #d2e3f5;
+    line-height: 1.8;
+    max-width: 650px;
+    margin: auto;
+}
+
+/* CONTACT */
+.contact-container {
+    max-width: 750px;
+    margin: auto;
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px #0000000b;
+}
+
+.contact-info {
+    line-height: 2.2;
+    font-size: 17px;
+}
+
+.contact-info a {
+    color: var(--blue);
+    text-decoration: none;
+}
+
+/* FOOTER */
+footer {
+    background: #071426;
+    color: white;
+    text-align: center;
+    padding: 28px;
+}
+
+footer span {
+    color: var(--cyan);
+}
+
+/* MOBILE */
+@media(max-width: 768px) {
+    nav {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        background: var(--dark);
+        padding: 20px;
+    }
+
+    nav.active {
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav a {
+        margin: 12px 0;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 75px 8%;
+    }
+
+    section {
+        padding: 55px 7%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header>
+    <div class="logo">LEARN <span>N RUN</span></div>
+
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+    <nav id="navbar">
+        <a href="#home" onclick="closeMenu()">Home</a>
+        <a href="#about" onclick="closeMenu()">About</a>
+        <a href="#courses" onclick="closeMenu()">Courses</a>
+        <a href="#contact" onclick="closeMenu()">Contact</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<div class="hero" id="home">
+    <div class="hero-content">
+        <h1>Learn Today.<br><span>Lead Tomorrow.</span></h1>
+
+        <p>
+            Welcome to Learn N Run Computer Center.
+            Empowering students with digital skills,
+            computer education and a brighter future.
+            Quality education is FREE for everyone!
+        </p>
+
+        <a href="#courses" class="btn">Explore Courses →</a>
+    </div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+    <div class="stat-box">
+        <h2 class="counter" data-target="1000">0</h2>
+        <p>Registered Students+</p>
+    </div>
+
+    <div class="stat-box">
+        <h2>100%</h2>
+        <p>Free Education</p>
+    </div>
+
+    <div class="stat-box">
+        <h2>∞</h2>
+        <p>Learning Opportunities</p>
+    </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+    <div class="about">
+        <div>
+            <h2>About Learn N Run</h2>
+            <p>
+                Learn N Run is a computer education center
+                located at Peshawar Road, Rawalpindi.
+
+                Our mission is to make computer education
+                accessible to everyone without financial barriers.
+
+                With more than 1,000 registered students,
+                we are working towards a digitally skilled
+                and empowered community.
+            </p>
+        </div>
+
+        <div class="about-card">
+            <h2>Education for Everyone!</h2>
+            <p>
+                No barriers. No fees. Just learning,
+                skills and opportunities.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- COURSES -->
+<section id="courses">
+    <h2 class="section-title">Our Learning Programs</h2>
+    <p class="section-desc">
+        Build your future with practical digital skills.
+    </p>
+
+    <div class="course-container">
+
+        <div class="course">
+            <div class="icon">💻</div>
+            <h3>Basic Computer</h3>
+            <p>Learn computer fundamentals, Windows,
+            typing and everyday computer skills.</p>
+        </div>
+
+        <div class="course">
+            <div class="icon">📊</div>
+            <h3>MS Office</h3>
+            <p>Develop skills in MS Word, Excel and
+            PowerPoint.</p>
+        </div>
+
+        <div class="course">
+            <div class="icon">🌐</div>
+            <h3>Internet Skills</h3>
+            <p>Learn internet browsing, email and
+            essential online skills.</p>
+        </div>
+
+        <div class="course">
+            <div class="icon">🎨</div>
+            <h3>Graphic Design</h3>
+            <p>Explore creative design and visual
+            communication skills.</p>
+        </div>
+
+        <div class="course">
+            <div class="icon">👨‍💻</div>
+            <h3>Web Development</h3>
+            <p>Start learning HTML, CSS and JavaScript
+            to build websites.</p>
+        </div>
+
+        <div class="course">
+            <div class="icon">🤖</div>
+            <h3>Digital Skills</h3>
+            <p>Discover modern technology, AI and
+            digital productivity.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- FREE EDUCATION -->
+<section class="free-section">
+    <h2>Education is <span>FREE!</span></h2>
+    <p>
+        At Learn N Run, we believe everyone deserves
+        an opportunity to learn and grow.
+        Our goal is to provide accessible computer
+        education and help students build a better future.
+    </p>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <h2 class="section-title">Contact Us</h2>
+    <p class="section-desc">
+        Visit us and become part of our learning community.
+    </p>
+
+    <div class="contact-container">
+        <div class="contact-info">
+            <p>🏫 <strong>Center:</strong> Learn N Run</p>
+            <p>📍 <strong>Location:</strong> Peshawar Road, Rawalpindi, Pakistan</p>
+            <p>👨‍🎓 <strong>Registered Students:</strong> 1,000+</p>
+            <p>💰 <strong>Fee:</strong> Completely Free</p>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 <span>Learn N Run</span>. All Rights Reserved.</p>
+    <p>Learn Skills. Build Dreams. Shape Your Future.</p>
+</footer>
+
+<script>
+
+// MOBILE MENU
+function toggleMenu() {
+    document.getElementById("navbar").classList.toggle("active");
+}
+
+function closeMenu() {
+    document.getElementById("navbar").classList.remove("active");
+}
+
+// STUDENT COUNTER ANIMATION
+const counters = document.querySelectorAll(".counter");
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const counter = entry.target;
+            const target = Number(counter.dataset.target);
+            let current = 0;
+
+            const increment = Math.ceil(target / 100);
+
+            const timer = setInterval(() => {
+                current += increment;
+
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+
+                counter.innerText = current.toLocaleString() + "+";
+            }, 20);
+
+            observer.unobserve(counter);
+        }
+    });
+}, { threshold: 0.5 });
+
+counters.forEach(counter => observer.observe(counter));
+
+</script>
+
+</body>
+</html>
